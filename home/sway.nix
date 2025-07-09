@@ -15,7 +15,6 @@ in {
         { command = "alacritty"; }
       ];
 
-      # Window appearance
       window = {
         titlebar = false;
         border = 2;

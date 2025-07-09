@@ -1,6 +1,6 @@
 {config, pkgs, lib, ...}: 
 let
-  path = "/etc/nixos";
+  path = "~/.nixconf";
   home = "${path}/home";
 in {
 
@@ -10,12 +10,13 @@ in {
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      ec = "sudoedit ${path}/configuration.nix";
-      eh = "sudoedit ${home}/Jayson.nix";
-      ew = "sudoedit ${home}/waybar.nix";
-      es = "sudoedit ${home}/sway.nix";
-      et = "sudoedit ${home}/terminal.nix";
-    };
+      ec = "$EDITOR ${path}/configuration.nix";
+      eh = "$EDITOR ${home}/Jayson.nix";
+      ew = "$EDITOR ${home}/waybar.nix";
+      es = "$EDITOR ${home}/sway.nix";
+      et = "$EDITOR ${home}/terminal.nix";
+      nix-git = "cd ${path} && git status";
+	    };
     history.path = "$HOME/.config/zsh/history";
   };
 
@@ -32,5 +33,4 @@ in {
         };
       };
     };
-  };
-}
+  };}
