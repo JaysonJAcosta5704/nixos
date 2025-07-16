@@ -195,7 +195,8 @@
         "backlight"
         "network"
         "pulseaudio"
-        "battery"
+        "battery#bat0"
+        "battery#bat1"
       ];
 
       # Hardware group
@@ -290,15 +291,26 @@
           headset = "󰋎";
           default = ["󰕿" "󰖀" "󰕾"];
         };
-<<<<<<< HEAD
-        on-scroll-up = "${pkgs.pamixer}/bin/pamixer -u -i 5 && notify send 'Volume Up'";
-        on-scroll-down = "${pkgs.pamixer}/bin/pamixer -d 5 && notifu send 'Volume Down'";
-=======
->>>>>>> c23ebb1 (Removed unnecessary statements)
       };
 
-      # Battery
-      battery = {
+      # Battery 0
+      "battery#bat0" = {
+        bat = "BAT0";
+        format = "{icon} {capacity}%";
+        format-charging = "󰂄 {capacity}%";
+        format-plugged = "󰚥 {capacity}%";
+        format-full = "󰁹 {capacity}%";
+        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+        states = {
+          warning = 30;
+          critical = 15;
+        };
+        interval = 60;
+      };
+
+      # Battery 1
+      "battery#bat1" = {
+        bat = "BAT1";
         format = "{icon} {capacity}%";
         format-charging = "󰂄 {capacity}%";
         format-plugged = "󰚥 {capacity}%";
