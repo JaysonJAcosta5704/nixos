@@ -288,13 +288,13 @@
           headphone = "󰋋";
           hands-free = "󱡏";
           headset = "󰋎";
-          phone = "󰏲";
-          portable = "󰦧";
-          car = "󰄋";
           default = ["󰕿" "󰖀" "󰕾"];
         };
+<<<<<<< HEAD
         on-scroll-up = "${pkgs.pamixer}/bin/pamixer -u -i 5 && notify send 'Volume Up'";
         on-scroll-down = "${pkgs.pamixer}/bin/pamixer -d 5 && notifu send 'Volume Down'";
+=======
+>>>>>>> c23ebb1 (Removed unnecessary statements)
       };
 
       # Battery
