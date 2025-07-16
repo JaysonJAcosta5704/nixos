@@ -68,11 +68,6 @@
         border: 2px solid @blue;
       }
 
-      #workspaces button:hover {
-        background: alpha(@surface1, 0.8);
-        border: 1px solid @surface1;
-      }
-
       /* Mode and window */
       #mode {
         background: @red;
@@ -172,12 +167,6 @@
         font-weight: 600;
       }
 
-      /* Hover effects */
-      #cpu:hover, #memory:hover, #backlight:hover, #network:hover,
-      #pulseaudio:hover, #battery:hover, #clock:hover {
-        background: alpha(@surface1, 0.3);
-        border: 1px solid alpha(@surface1, 0.5);
-      }
     '';
 
     settings = [{
@@ -242,11 +231,6 @@
       "sway/window" = {
         format = "{title}";
         max-length = 50;
-        rewrite = {
-          "(.*) — Mozilla Firefox" = "🌍 $1";
-          "(.*) - vim" = " $1";
-          "(.*) - Alacritty" = " $1";
-        };
       };
 
       # CPU module
@@ -309,9 +293,8 @@
           car = "󰄋";
           default = ["󰕿" "󰖀" "󰕾"];
         };
-        max-volume = 200;
-        on-scroll-up = "pactl set-sink-volume @DEFAULT_SINK@ +5%";
-        on-scroll-down = "pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        on-scroll-up = "${pkgs.pamixer}/bin/pamixer -u -i 5 && notify send 'Volume Up'";
+        on-scroll-down = "${pkgs.pamixer}/bin/pamixer -d 5 && notifu send 'Volume Down'";
       };
 
       # Battery

@@ -24,15 +24,11 @@
       mako             # Notifications
       waybar           # Wayland Bar
       btop             # Resource Monitor
-      pulseaudio       # Audio Control
       github-cli       # Github Command Line Interface
       nerd-fonts.jetbrains-mono
     ];
     home.sessionVariables = {
       EDITOR = "vim";
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_CACHE_HOME = "$HOME/.cache";
-      XDG_DATA_HOME = "$HOME/.local/share";
     };
 
     fonts.fontconfig.enable = true;

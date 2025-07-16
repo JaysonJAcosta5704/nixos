@@ -30,7 +30,6 @@
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.printing.enable = true;
   services.libinput.enable = true;
 
   users.users.Jayson = {
@@ -47,10 +46,6 @@
   security.rtkit.enable = true;
   security.polkit.enable = true;
   home-manager.users.Jayson = import ./home/Jayson.nix;
-
-  environment.systemPackages = with pkgs; [
-    pkgs.pulseaudio
-  ];
 
   services.pipewire = {
     enable = true;
