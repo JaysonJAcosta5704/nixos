@@ -15,11 +15,6 @@ What should happen?
 ## Actual Behavior
 What actually happens?
 
-## System Information
-- **NixOS version**: 
-- **Hardware**: Thinkpad T460
-- **Desktop Environment**: Sway + Waybar
-
 ## Affected Components
 Which parts of your config are involved?
 - [ ] System configuration (configuration.nix)
