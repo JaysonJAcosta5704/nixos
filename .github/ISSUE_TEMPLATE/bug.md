@@ -1,9 +1,9 @@
 ---
 name: Bug Report
-about: Report something that's not working in the NixOS configuration
+about: Report something broken in the NixOS configuration
 title: '[BUG] '
 labels: bug
-assignees: ''
+assignees: 'JaysonJAcosta5704'
 ---
 
 ## Bug Description
@@ -18,10 +18,7 @@ What actually happens?
 ## Affected Components
 Which parts of your config are involved?
 - [ ] System configuration (configuration.nix)
-- [ ] Home Manager (Jayson.nix)
-- [ ] Sway window manager
-- [ ] Waybar
-- [ ] Terminal/shell
+- [ ] Home Manager Module (Jayson.nix)
 - [ ] Specific application: 
 
 ## Steps to Reproduce
@@ -35,31 +32,8 @@ If there are error messages, paste them here:
 [error output]
 ```
 
-## Recent Changes
-What was the last thing you changed before this started happening?
-
 ## Configuration Context
 Relevant parts of your configuration (if applicable):
 ```nix
 [relevant config snippet]
 ```
-
-## Workaround
-Is there a temporary fix or workaround?
-- [ ] No workaround found
-- [ ] Workaround available: 
-
-## Impact
-How does this affect your workflow?
-- [ ] Blocks essential functionality
-- [ ] Reduces productivity
-- [ ] Minor inconvenience
-- [ ] Cosmetic issue
-
-## Debugging Attempted
-What have you already tried?
-- [ ] Checked system logs
-- [ ] Rebuilt configuration
-- [ ] Restarted services
-- [ ] Searched documentation
-- [ ] Other:
