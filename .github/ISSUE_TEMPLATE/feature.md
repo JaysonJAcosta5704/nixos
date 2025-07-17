@@ -8,7 +8,7 @@ assignees: 'JaysonJAcosta5704'
 
 ## Feature Description
 What software or functionality do you want to add?
-
+ - Feature
 
 ## Current State
 - [ ] Not installed/configured
@@ -23,8 +23,8 @@ How does this integrate with existing setup?
 
 ## Resources
 Links to documentation, examples, or relevant information: 
- - Doc 1
- - Doc 2
+ - Doc
 
 ## Notes
 Any additional considerations, known issues, or implementation thoughts.
+ - Notes
