@@ -13,7 +13,6 @@
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
       vim                 # Text Editor
-      git                 # Version Control
       wl-clipboard        # Clipboard
       cliphist            # Clipboard manager
       wofi                # App Launcher
@@ -24,12 +23,18 @@
       mako                # Notifications
       waybar              # Wayland Bar
       btop                # Resource Monitor
-      github-cli          # Github Command Line Interface
-      kdePackages.dolphin # File Manager
-      
+
+      # File Manager
+      kdePackages.dolphin
+      yazi
+
       # Browsers
       firefox 
       google-chrome
+
+      # Version Control
+      github-cli
+      git
 
       # Archive Tools
       kdePackages.ark

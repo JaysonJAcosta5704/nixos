@@ -1,7 +1,6 @@
 {config, pkgs, lib, ...}:
 let
   mod = "Mod4";
-  alt = "Mod3";
 in {
   wayland.windowManager.sway = {
     enable = true;
