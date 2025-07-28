@@ -35,7 +35,7 @@
   users.users.Jayson = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "video" ];
+    extraGroups = [ "wheel" "video" "storage" ];
     packages = with pkgs; [
       tree
     ];
@@ -63,6 +63,10 @@
       };
     };
   };
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  
 
   system.stateVersion = "25.05";
 }
