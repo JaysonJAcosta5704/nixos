@@ -12,7 +12,6 @@
     home.stateVersion = "25.05";
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
-      firefox google-chrome  # Browser
       vim                 # Text Editor
       git                 # Version Control
       wl-clipboard        # Clipboard
@@ -27,6 +26,18 @@
       btop                # Resource Monitor
       github-cli          # Github Command Line Interface
       kdePackages.dolphin # File Manager
+      
+      # Browsers
+      firefox 
+      google-chrome
+
+      # Archive Tools
+      kdePackages.ark
+      atool
+      zip
+      unzip
+
+      # Fonts
       nerd-fonts.jetbrains-mono
     ];
     home.sessionVariables = {
