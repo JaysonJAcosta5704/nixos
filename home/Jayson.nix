@@ -3,6 +3,7 @@
      ./sway.nix
      ./waybar.nix
      ./terminal.nix
+     ./vscode.nix
    ];
 
     programs.home-manager.enable = true;
@@ -23,6 +24,7 @@
       mako                # Notifications
       waybar              # Wayland Bar
       btop                # Resource Monitor
+      postman             # API Platform
 
       # File Manager
       kdePackages.dolphin
