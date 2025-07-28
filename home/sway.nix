@@ -1,6 +1,7 @@
 {config, pkgs, lib, ...}:
 let
   mod = "Mod4";
+  alt = "Mod3";
 in {
   wayland.windowManager.sway = {
     enable = true;
@@ -36,6 +37,7 @@ in {
       keybindings = lib.mkOptionDefault {
         "${mod}+d" = "exec wofi --show drun";
         "${mod}+Shift+Return" = "exec firefox";
+        "Alt+Shift+Return" = "exec dolphin";
         "${mod}+Shift+s" = ''exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d%H%M%S).png'';
         "${mod}+Shift+a" = ''exec grim -g "$(slurp)" - | wl-copy'';
         "${mod}+Shift+v" = ''
