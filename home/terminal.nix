@@ -15,6 +15,7 @@ in {
       ew = "$EDITOR ${home}/waybar.nix";
       es = "$EDITOR ${home}/sway.nix";
       et = "$EDITOR ${home}/terminal.nix";
+      ev = "$EDITOR ${home}/vscode.nix";
       nix-git = "cd ${path} && git status";
 	    };
     history.path = "$HOME/.config/zsh/history";
