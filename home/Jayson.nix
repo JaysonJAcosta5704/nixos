@@ -5,7 +5,6 @@
      ./terminal.nix
      ./vscode.nix
    ];
-    
     programs.home-manager.enable = true;
    
     home.username = "Jayson";
