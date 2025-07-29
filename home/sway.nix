@@ -6,6 +6,7 @@ in {
     enable = true;
     checkConfig = false;
     config = {
+      bars = [];
       modifier = mod;
       terminal = "alacritty";
       
