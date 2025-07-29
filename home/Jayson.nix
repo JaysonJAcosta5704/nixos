@@ -5,14 +5,14 @@
      ./terminal.nix
      ./vscode.nix
    ];
-
+    
     programs.home-manager.enable = true;
    
     home.username = "Jayson";
     home.homeDirectory = "/home/Jayson";
     home.stateVersion = "25.05";
     nixpkgs.config.allowUnfree = true;
-    home.packages = with pkgs; [
+    home.packages = with pkgs; with kdePackages; [
       vim                 # Text Editor
       wl-clipboard        # Clipboard
       cliphist            # Clipboard manager
@@ -25,9 +25,14 @@
       waybar              # Wayland Bar
       btop                # Resource Monitor
       postman             # API Platform
+      libreoffice         # Office Suite
+
+      # Media
+      dragon              # Video Player
+      gwenview            # Image Viewer
 
       # File Manager
-      kdePackages.dolphin
+      dolphin
       yazi
 
       # Browsers
@@ -39,7 +44,7 @@
       git
 
       # Archive Tools
-      kdePackages.ark
+      ark
       atool
       zip
       unzip
