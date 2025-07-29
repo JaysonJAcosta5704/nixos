@@ -27,6 +27,12 @@
       libreoffice         # Office Suite
       thunderbird         # Email Client
       obsidian            # Note taker
+      nixfmt-rfc-style    # Nix formatter
+      blueman             # Bluetooth GUI
+
+      # Password Management
+      bitwarden-desktop
+      bitwarden-cli
 
       # Media
       dragon              # Video Player

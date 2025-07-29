@@ -7,6 +7,7 @@
 {
   imports =
     [
+      ./networking.nix
       ./hardware-configuration.nix
       <home-manager/nixos>
     ];
@@ -19,14 +20,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.plymouth.enable = true;
   
-  networking.hostName = "Jayson-Thinkpad-T460";
-  networking.wireless = {
-    enable = true;
-    userControlled.enable = true;
-    secretsFile = "/etc/nixos/secrets/wifi.env";
-    networks."CenturyLink6939".pskRaw = "ext:PSK_RAW_1";
-  };
-
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -47,6 +40,12 @@
   security.polkit.enable = true;
   home-manager.users.Jayson = import ./home/Jayson.nix;
 
+  hardware.bluetooth = {
+    enable = true; 
+    powerOnBoot = true;
+  };
+ 
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -66,7 +65,6 @@
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
-  
 
   system.stateVersion = "25.05";
 }
