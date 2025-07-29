@@ -41,7 +41,7 @@ in
       };
 
       keybindings = lib.mkOptionDefault {
-        "${mod}+d" = "exec wofi --show drun";
+        "${mod}+d" = "exec fuzzel";
         "${mod}+Shift+Return" = "exec firefox";
         "Alt+Shift+Return" = "exec dolphin";
         "Alt+Shift+V" = "exec code";
@@ -49,7 +49,7 @@ in
         "${mod}+Shift+a" = ''exec grim -g "$(slurp)" - | wl-copy'';
         "${mod}+Shift+v" = ''
           exec cliphist list \
-          | wofi --dmenu -p "Select Item to Copy" \
+          | fuzzel --dmenu -p "Select Item to Copy" \
           | cliphist decode \
           | wl-copy
         '';

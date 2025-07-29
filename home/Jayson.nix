@@ -24,7 +24,7 @@
       vim # Text Editor
       wl-clipboard # Clipboard
       cliphist # Clipboard manager
-      wofi # App Launcher
+      fuzzel # App Launcher
       alacritty # Terminal
       grim
       slurp # Screenshots
