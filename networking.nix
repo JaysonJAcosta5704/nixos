@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   networking.hostName = "Jayson-Thinkpad-T460";
   networking.wireless = {

@@ -1,12 +1,17 @@
 # waybar.nix - Clean and simplified waybar configuration
-# 
+#
 # CLEANED UP IN THIS VERSION:
 # ✅ Removed tray (system tray applications)
 # ✅ Removed all on-click actions (not working)
 # ✅ Removed all tooltips (unnecessary)
 # ✅ Much cleaner and easier to read
 
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   programs.waybar = {
     enable = true;
@@ -169,166 +174,198 @@
 
     '';
 
-    settings = [{
-      # Basic bar configuration
-      height = 32;
-      layer = "top";
-      position = "top";
-      spacing = 4;
-      margin-top = 8;
-      margin-left = 16;
-      margin-right = 16;
+    settings = [
+      {
+        # Basic bar configuration
+        height = 32;
+        layer = "top";
+        position = "top";
+        spacing = 4;
+        margin-top = 8;
+        margin-left = 16;
+        margin-right = 16;
 
-      # Module layout
-      modules-left = [
-        "sway/workspaces"
-        "sway/mode"
-        "sway/window"
-      ];
-
-      modules-center = [
-        "clock"
-      ];
-
-      modules-right = [
-        "group/hardware"
-        "backlight"
-        "network"
-        "pulseaudio"
-        "battery#bat0"
-        "battery#bat1"
-      ];
-
-      # Hardware group
-      "group/hardware" = {
-        orientation = "horizontal";
-        modules = [
-          "cpu"
-          "memory"
-          "temperature"
+        # Module layout
+        modules-left = [
+          "sway/workspaces"
+          "sway/mode"
+          "sway/window"
         ];
-      };
 
-      # Sway workspaces
-      "sway/workspaces" = {
-        disable-scroll = false;
-        all-outputs = true;
-        format = "{name}";
-        persistent_workspaces = {
-          "1" = [];
-          "2" = [];
-          "3" = [];
-          "4" = [];
-          "5" = [];
+        modules-center = [
+          "clock"
+        ];
+
+        modules-right = [
+          "group/hardware"
+          "backlight"
+          "network"
+          "pulseaudio"
+          "battery#bat0"
+          "battery#bat1"
+        ];
+
+        # Hardware group
+        "group/hardware" = {
+          orientation = "horizontal";
+          modules = [
+            "cpu"
+            "memory"
+            "temperature"
+          ];
         };
-      };
 
-      # Sway mode
-      "sway/mode" = {
-        format = "<span style=\"italic\">{}</span>";
-      };
-
-      # Window title
-      "sway/window" = {
-        format = "{title}";
-        max-length = 50;
-      };
-
-      # CPU module
-      cpu = {
-        format = "󰻠 {usage}%";
-        interval = 10;
-        states = {
-          warning = 70;
-          critical = 90;
+        # Sway workspaces
+        "sway/workspaces" = {
+          disable-scroll = false;
+          all-outputs = true;
+          format = "{name}";
+          persistent_workspaces = {
+            "1" = [ ];
+            "2" = [ ];
+            "3" = [ ];
+            "4" = [ ];
+            "5" = [ ];
+          };
         };
-      };
 
-      # Memory module
-      memory = {
-        format = "󰍛 {used:0.1f}G";
-        interval = 30;
-        states = {
-          warning = 70;
-          critical = 90;
+        # Sway mode
+        "sway/mode" = {
+          format = "<span style=\"italic\">{}</span>";
         };
-      };
 
-      # Temperature
-      temperature = {
-        format = "󰔏 {temperatureC}°C";
-        format-critical = "󰸁 {temperatureC}°C";
-        critical-threshold = 80;
-        interval = 30;
-      };
-
-      # Brightness control
-      backlight = {
-        format = "{icon} {percent}%";
-        format-icons = ["󰃞" "󰃟" "󰃠"];
-      };
-
-      # Network (adapted for wpa_supplicant)
-      network = {
-        format-wifi = "󰖩 {essid}";
-        format-ethernet = "󰈀 Connected";
-        format-linked = "󰈀 {ifname} (No IP)";
-        format-disconnected = "󰖪 Disconnected";
-        interval = 5;
-      };
-
-      # Audio
-      pulseaudio = {
-        format = "{icon} {volume}%";
-        format-bluetooth = "{icon}󰂯 {volume}%";
-        format-bluetooth-muted = "󰝟󰂯";
-        format-muted = "󰝟";
-        format-source = " {volume}%";
-        format-source-muted = "";
-        format-icons = {
-          headphone = "󰋋";
-          hands-free = "󱡏";
-          headset = "󰋎";
-          default = ["󰕿" "󰖀" "󰕾"];
+        # Window title
+        "sway/window" = {
+          format = "{title}";
+          max-length = 50;
         };
-      };
 
-      # Battery 0
-      "battery#bat0" = {
-        bat = "BAT0";
-        format = "{icon} {capacity}%";
-        format-charging = "󰂄 {capacity}%";
-        format-plugged = "󰚥 {capacity}%";
-        format-full = "󰁹 {capacity}%";
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-        states = {
-          warning = 30;
-          critical = 15;
+        # CPU module
+        cpu = {
+          format = "󰻠 {usage}%";
+          interval = 10;
+          states = {
+            warning = 70;
+            critical = 90;
+          };
         };
-        interval = 60;
-      };
 
-      # Battery 1
-      "battery#bat1" = {
-        bat = "BAT1";
-        format = "{icon} {capacity}%";
-        format-charging = "󰂄 {capacity}%";
-        format-plugged = "󰚥 {capacity}%";
-        format-full = "󰁹 {capacity}%";
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-        states = {
-          warning = 30;
-          critical = 15;
+        # Memory module
+        memory = {
+          format = "󰍛 {used:0.1f}G";
+          interval = 30;
+          states = {
+            warning = 70;
+            critical = 90;
+          };
         };
-        interval = 60;
-      };
 
-      # Clock
-      clock = {
-        format = "{:%a %d %b  %H:%M}";
-        format-alt = "{:%Y-%m-%d %H:%M:%S}";
-        interval = 60;
-      };
-    }];
+        # Temperature
+        temperature = {
+          format = "󰔏 {temperatureC}°C";
+          format-critical = "󰸁 {temperatureC}°C";
+          critical-threshold = 80;
+          interval = 30;
+        };
+
+        # Brightness control
+        backlight = {
+          format = "{icon} {percent}%";
+          format-icons = [
+            "󰃞"
+            "󰃟"
+            "󰃠"
+          ];
+        };
+
+        # Network (adapted for wpa_supplicant)
+        network = {
+          format-wifi = "󰖩 {essid}";
+          format-ethernet = "󰈀 Connected";
+          format-linked = "󰈀 {ifname} (No IP)";
+          format-disconnected = "󰖪 Disconnected";
+          interval = 5;
+        };
+
+        # Audio
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          format-bluetooth = "{icon}󰂯 {volume}%";
+          format-bluetooth-muted = "󰝟󰂯";
+          format-muted = "󰝟";
+          format-source = " {volume}%";
+          format-source-muted = "";
+          format-icons = {
+            headphone = "󰋋";
+            hands-free = "󱡏";
+            headset = "󰋎";
+            default = [
+              "󰕿"
+              "󰖀"
+              "󰕾"
+            ];
+          };
+        };
+
+        # Battery 0
+        "battery#bat0" = {
+          bat = "BAT0";
+          format = "{icon} {capacity}%";
+          format-charging = "󰂄 {capacity}%";
+          format-plugged = "󰚥 {capacity}%";
+          format-full = "󰁹 {capacity}%";
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          interval = 60;
+        };
+
+        # Battery 1
+        "battery#bat1" = {
+          bat = "BAT1";
+          format = "{icon} {capacity}%";
+          format-charging = "󰂄 {capacity}%";
+          format-plugged = "󰚥 {capacity}%";
+          format-full = "󰁹 {capacity}%";
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          interval = 60;
+        };
+
+        # Clock
+        clock = {
+          format = "{:%a %d %b  %H:%M}";
+          format-alt = "{:%Y-%m-%d %H:%M:%S}";
+          interval = 60;
+        };
+      }
+    ];
   };
 }

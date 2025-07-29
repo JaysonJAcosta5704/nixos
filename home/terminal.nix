@@ -1,8 +1,14 @@
-{config, pkgs, lib, ...}: 
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   path = "~/.nixconf";
   home = "${path}/home";
-in {
+in
+{
 
   programs.zsh = {
     enable = true;
@@ -17,13 +23,13 @@ in {
       et = "$EDITOR ${home}/terminal.nix";
       ev = "$EDITOR ${home}/vscode.nix";
       nix-git = "cd ${path} && git status";
-	    };
+    };
     history.path = "$HOME/.config/zsh/history";
   };
 
   programs.alacritty = {
     enable = true;
-    settings = { 
+    settings = {
       terminal.shell.program = "/run/current-system/sw/bin/zsh";
       mouse.hide_when_typing = true;
       window = {

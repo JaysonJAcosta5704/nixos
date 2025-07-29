@@ -2,15 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./networking.nix
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [
+    ./networking.nix
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
@@ -19,7 +23,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.plymouth.enable = true;
-  
+
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -28,7 +32,11 @@
   users.users.Jayson = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "video" "storage" ];
+    extraGroups = [
+      "wheel"
+      "video"
+      "storage"
+    ];
     packages = with pkgs; [
       tree
     ];
@@ -41,10 +49,9 @@
   home-manager.users.Jayson = import ./home/Jayson.nix;
 
   hardware.bluetooth = {
-    enable = true; 
+    enable = true;
     powerOnBoot = true;
   };
- 
 
   services.pipewire = {
     enable = true;

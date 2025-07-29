@@ -1,18 +1,24 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   mod = "Mod4";
-in {
+in
+{
   wayland.windowManager.sway = {
     enable = true;
     checkConfig = false;
     config = {
-      bars = [];
+      bars = [ ];
       modifier = mod;
       terminal = "alacritty";
-      
+
       startup = [
         { command = "--no-startup-id wl-paste --watch cliphist store"; }
-        { command = "mako"; }           
+        { command = "mako"; }
         { command = "alacritty"; }
       ];
 
@@ -20,7 +26,7 @@ in {
         titlebar = false;
         border = 2;
       };
-      
+
       gaps = {
         inner = 8;
         outer = 4;
@@ -42,10 +48,10 @@ in {
         "${mod}+Shift+s" = ''exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d%H%M%S).png'';
         "${mod}+Shift+a" = ''exec grim -g "$(slurp)" - | wl-copy'';
         "${mod}+Shift+v" = ''
-            exec cliphist list \
-            | wofi --dmenu -p "Select Item to Copy" \
-            | cliphist decode \
-            | wl-copy
+          exec cliphist list \
+          | wofi --dmenu -p "Select Item to Copy" \
+          | cliphist decode \
+          | wl-copy
         '';
         "XF86AudioRaiseVolume" = "exec pamixer -u -i 5";
         "XF86AudioLowerVolume" = "exec pamixer -d 5";
