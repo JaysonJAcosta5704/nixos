@@ -25,6 +25,8 @@
       btop                # Resource Monitor
       postman             # API Platform
       libreoffice         # Office Suite
+      thunderbird         # Email Client
+      obsidian            # Note taker
 
       # Media
       dragon              # Video Player
