@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 {
@@ -10,6 +8,7 @@
     ./waybar.nix
     ./terminal.nix
     ./vscode.nix
+    ./gitconfig.nix
   ];
   programs.home-manager.enable = true;
 
@@ -37,7 +36,6 @@
       libreoffice # Office Suite
       thunderbird # Email Client
       obsidian # Note taker
-      nixfmt-rfc-style # Nix formatter
       blueman # Bluetooth GUI
 
       # Password Management
@@ -65,6 +63,10 @@
       atool
       zip
       unzip
+
+      # Nix Language
+      nixfmt-rfc-style
+      nixd
 
       # Fonts
       nerd-fonts.jetbrains-mono
