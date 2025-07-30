@@ -16,6 +16,7 @@
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.iconTheme" = "catppuccin-mocha";
         "files.autoSave" = "afterDelay";
+        "git.autofetch" = true;
 
         # Prettier settings
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
