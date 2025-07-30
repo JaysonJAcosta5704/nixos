@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
   ...
 }:
 let
@@ -40,5 +37,6 @@ in
         };
       };
     };
+    theme = "catppuccin";
   };
 }
