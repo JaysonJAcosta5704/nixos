@@ -9,6 +9,7 @@
     ./terminal.nix
     ./vscode.nix
     ./gitconfig.nix
+    ./applications.nix
   ];
   programs.home-manager.enable = true;
 

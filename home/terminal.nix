@@ -13,12 +13,14 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      ec = "$EDITOR ${path}/configuration.nix";
-      eh = "$EDITOR ${home}/Jayson.nix";
-      ew = "$EDITOR ${home}/waybar.nix";
-      es = "$EDITOR ${home}/sway.nix";
-      et = "$EDITOR ${home}/terminal.nix";
-      ev = "$EDITOR ${home}/vscode.nix";
+      econf = "$EDITOR ${path}/configuration.nix";
+      ehome = "$EDITOR ${home}/Jayson.nix";
+      ewaybar = "$EDITOR ${home}/waybar.nix";
+      esway = "$EDITOR ${home}/sway.nix";
+      eterm = "$EDITOR ${home}/terminal.nix";
+      evsc = "$EDITOR ${home}/vscode.nix";
+      egit = "$EDITOR ${home}/gitconfig.nix";
+      eapps = "$EDITOR ${home}/applications.nix";
       nix-git = "cd ${path} && git status";
     };
     history.path = "$HOME/.config/zsh/history";
