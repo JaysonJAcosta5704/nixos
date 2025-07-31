@@ -7,9 +7,6 @@
 # ✅ Much cleaner and easier to read
 
 {
-  config,
-  pkgs,
-  lib,
   ...
 }:
 {
