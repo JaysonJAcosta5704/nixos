@@ -21,6 +21,7 @@ in
       evsc = "$EDITOR ${home}/vscode.nix";
       egit = "$EDITOR ${home}/gitconfig.nix";
       eapps = "$EDITOR ${home}/applications.nix";
+      enet = "$EDITOR ${path}/networking.nix";
       nix-git = "cd ${path} && git status";
     };
     history.path = "$HOME/.config/zsh/history";
