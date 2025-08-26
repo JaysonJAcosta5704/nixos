@@ -1,3 +1,4 @@
 secrets/
 .env
 .vscode
+hardware-configuration.nix
