@@ -12,69 +12,67 @@
     ./applications.nix
   ];
   programs.home-manager.enable = true;
-
-  home.username = "Jayson";
-  home.homeDirectory = "/home/Jayson";
-  home.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
-  home.packages =
-    with pkgs;
-    with kdePackages;
-    [
-      vim # Text Editor
-      wl-clipboard # Clipboard
-      cliphist # Clipboard manager
-      fuzzel # App Launcher
-      alacritty # Terminal
-      grim
-      slurp # Screenshots
-      brightnessctl # Brighness Control
-      pamixer # Volume Control
-      mako # Notifications
-      waybar # Wayland Bar
-      btop # Resource Monitor
-      postman # API Platform
-      libreoffice # Office Suite
-      thunderbird # Email Client
-      obsidian # Note taker
-      blueman # Bluetooth GUI
 
-      # Password Management
-      bitwarden-desktop
-      bitwarden-cli
+  home = {
+    username = "Jayson";
+    homeDirectory = "/home/Jayson";
+    stateVersion = "25.05";
+    sessionVariables.EDITOR = "vim";
+    packages =
+      with pkgs;
+      with kdePackages;
+      [
+        vim # Text Editor
+        wl-clipboard # Clipboard
+        cliphist # Clipboard manager
+        fuzzel # App Launcher
+        alacritty # Terminal
+        grim
+        slurp # Screenshots
+        brightnessctl # Brighness Control
+        pamixer # Volume Control
+        mako # Notifications
+        waybar # Wayland Bar
+        btop # Resource Monitor
+        postman # API Platform
+        libreoffice # Office Suite
+        thunderbird # Email Client
+        obsidian # Note taker
+        blueman # Bluetooth GUI
 
-      # Media
-      dragon # Video Player
-      gwenview # Image Viewer
+        # Password Management
+        bitwarden-desktop
+        bitwarden-cli
 
-      # File Manager
-      dolphin
-      yazi
+        # Media
+        dragon # Video Player
+        gwenview # Image Viewer
 
-      # Browsers
-      firefox
-      google-chrome
+        # File Manager
+        dolphin
+        yazi
 
-      # Version Control
-      github-cli
-      git
+        # Browsers
+        firefox
+        google-chrome
 
-      # Archive Tools
-      ark
-      atool
-      zip
-      unzip
+        # Version Control
+        github-cli
+        git
 
-      # Nix Language
-      nixfmt-rfc-style
-      nixd
+        # Archive Tools
+        ark
+        atool
+        zip
+        unzip
 
-      # Fonts
-      nerd-fonts.jetbrains-mono
-    ];
-  home.sessionVariables = {
-    EDITOR = "vim";
+        # Nix Language
+        nixfmt-rfc-style
+        nixd
+
+        # Fonts
+        nerd-fonts.jetbrains-mono
+      ];
   };
-
-  fonts.fontconfig.enable = true;
 }

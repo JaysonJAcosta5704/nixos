@@ -5,16 +5,19 @@ let
   ssidList = builtins.attrNames wifiPasswords;
 
   wifiNetworkAttrs = builtins.listToAttrs (
-    map (ssid:
+    map (
+      ssid:
       let
         entry = wifiPasswords.${ssid};
-      in {
+      in
+      {
         name = ssid;
         value = if builtins.isString entry then { psk = entry; } else entry;
       }
     ) ssidList
   );
-in {
+in
+{
   networking = {
     hostName = "Jayson-Thinkpad-T480s";
     useDHCP = false;
