@@ -17,10 +17,23 @@ let
 in {
   networking = {
     hostName = "Jayson-Thinkpad-T480s";
+    useDHCP = false;
+    networkmanager.enable = false;
     wireless = {
       enable = true;
       userControlled.enable = true;
       networks = wifiNetworkAttrs;
+    };
+    interfaces.wlp61s0.useDHCP = true;
+    dhcpcd = {
+      enable = true;
+      extraConfig = ''
+        nohook resolve.conf
+        noipv411
+        timeout 60
+        interface wlp61s0
+        metric 3003
+      '';
     };
   };
 }
