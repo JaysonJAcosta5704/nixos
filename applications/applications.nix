@@ -1,5 +1,13 @@
 { ... }:
 {
+
+  imports = [
+    ./firefox.nix
+    ./git.nix
+    ./vscode.nix
+    ./programming.nix
+  ];
+
   programs.fuzzel = {
     enable = true;
     settings = {

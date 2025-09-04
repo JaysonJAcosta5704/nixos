@@ -7,9 +7,7 @@
     ./sway.nix
     ./waybar.nix
     ./terminal.nix
-    ./vscode.nix
-    ./gitconfig.nix
-    ./applications.nix
+    ../applications/applications.nix
   ];
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -26,20 +24,17 @@
         vim # Text Editor
         wl-clipboard # Clipboard
         cliphist # Clipboard manager
-        fuzzel # App Launcher
-        alacritty # Terminal
         grim
         slurp # Screenshots
         brightnessctl # Brighness Control
         pamixer # Volume Control
         mako # Notifications
-        waybar # Wayland Bar
         btop # Resource Monitor
         postman # API Platform
         libreoffice # Office Suite
         thunderbird # Email Client
-        obsidian # Note taker
         blueman # Bluetooth GUI
+        legcord # Lightweight Discord Client
 
         # Password Management
         bitwarden-desktop
@@ -53,14 +48,6 @@
         dolphin
         yazi
 
-        # Browsers
-        firefox
-        google-chrome
-
-        # Version Control
-        github-cli
-        git
-
         # Archive Tools
         ark
         atool
@@ -73,6 +60,8 @@
 
         # Fonts
         nerd-fonts.jetbrains-mono
+
+        obsidian
       ];
   };
 }

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  users.users = {  
+  users.users = {
     greeter = {
       isSystemUser = true;
       description = "Greeter user for ReGreet";
