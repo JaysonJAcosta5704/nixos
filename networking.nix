@@ -19,7 +19,7 @@ let
 in
 {
   networking = {
-    hostName = "Jayson-Thinkpad-T480s";
+    hostName = "Thinkpad-Linux";
     useDHCP = false;
     networkmanager.enable = false;
     wireless = {
