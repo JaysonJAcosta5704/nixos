@@ -17,9 +17,7 @@
         "video"
         "storage"
       ];
-      packages = with pkgs; [
-        tree
-      ];
+      packages = with pkgs; [ tree ];
     };
   };
 

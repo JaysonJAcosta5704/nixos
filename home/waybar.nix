@@ -1,14 +1,4 @@
-# waybar.nix - Clean and simplified waybar configuration
-#
-# CLEANED UP IN THIS VERSION:
-# ✅ Removed tray (system tray applications)
-# ✅ Removed all on-click actions (not working)
-# ✅ Removed all tooltips (unnecessary)
-# ✅ Much cleaner and easier to read
-
-{
-  ...
-}:
+{ ... }:
 {
   programs.waybar = {
     enable = true;
@@ -189,9 +179,7 @@
           "sway/window"
         ];
 
-        modules-center = [
-          "clock"
-        ];
+        modules-center = [ "clock" ];
 
         modules-right = [
           "group/hardware"

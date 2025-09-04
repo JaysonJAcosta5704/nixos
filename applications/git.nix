@@ -1,13 +1,9 @@
-{
-  ...
-}:
+{ ... }:
 {
   programs.git = {
     enable = true;
 
-    ignores = [
-      ".env"
-    ];
+    ignores = [ ".env" ];
     extraConfig.init.defaultBranch = "main";
 
     userEmail = "JaysonJAcosta5704.coding@gmail.com";

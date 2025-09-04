@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ ... }:
 let
   path = "~/.nixconf";
   home = "${path}/home";
@@ -23,7 +21,7 @@ in
       egit = "$EDITOR ${home}/gitconfig.nix";
       eapps = "$EDITOR ${home}/applications.nix";
       nix-git = "cd ${path} && git status";
-      nix-format = "nixfmt ${path}/**/*.nix";
+      nix-format = "nixfmt ${path}/**/**";
     };
     history.path = "$HOME/.config/zsh/history";
   };
