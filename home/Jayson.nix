@@ -59,6 +59,13 @@
         nerd-fonts.jetbrains-mono
 
         obsidian
+
+        python3Full
+        docker-compose
+        docker
+        jdk
+        nodejs_22
+        apfs-fuse
       ];
   };
 }
