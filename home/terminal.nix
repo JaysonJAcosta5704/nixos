@@ -2,6 +2,7 @@
 let
   path = "~/.nixconf";
   home = "${path}/home";
+  apps = "${path}/applications";
 in
 {
 
@@ -13,13 +14,15 @@ in
     shellAliases = {
       econf = "$EDITOR ${path}/configuration.nix";
       enet = "$EDITOR ${path}/networking.nix";
+      eboot = "$EDITOR ${path}/boot.nix";
       ehome = "$EDITOR ${home}/Jayson.nix";
       ewaybar = "$EDITOR ${home}/waybar.nix";
       esway = "$EDITOR ${home}/sway.nix";
       eterm = "$EDITOR ${home}/terminal.nix";
-      evsc = "$EDITOR ${home}/vscode.nix";
-      egit = "$EDITOR ${home}/gitconfig.nix";
-      eapps = "$EDITOR ${home}/applications.nix";
+      evsc = "$EDITOR ${apps}/vscode.nix";
+      egit = "$EDITOR ${apps}/git.nix";
+      eapps = "$EDITOR ${apps}/applications.nix";
+      eother = "yazi ${path}";
       nix-git = "cd ${path} && git status";
       nix-format = "nixfmt ${path}/**/**";
     };
