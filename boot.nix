@@ -7,6 +7,7 @@
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
+        configurationLimit = 5;
         extraEntries = ''
 menuentry "Shutdown" { halt }
 menuentry "Reboot" { reboot }
@@ -16,7 +17,7 @@ menuentry "Rescue Shell" {
   initrd /boot/initrd
   boot
 }
-menuentry "Ventoy USB (/dev/sdb)" {
+menuentry "Ventoy USB (/dev/sdX)" {
     insmod part_gpt
     insmod part_msdos
     
@@ -42,7 +43,10 @@ menuentry "Ventoy USB (/dev/sdb)" {
 }
 '';
       };
-      efi.efiSysMountPoint = "/boot";
+      efi = {
+	efiSysMountPoint = "/boot";
+        canTouchEfiVariables = true;
+      };
     };
     kernelPackages = pkgs.linuxPackages_latest;
     plymouth = {
