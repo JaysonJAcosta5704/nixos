@@ -7,7 +7,7 @@
     extraConfig.init.defaultBranch = "main";
 
     userEmail = "JaysonJAcosta5704.coding@gmail.com";
-    userName = "Jayson Acosa";
+    userName = "Jayson Acosta";
   };
 
   programs.gh = {
