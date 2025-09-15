@@ -5,7 +5,7 @@
     XDG_DATA_HOME = "${config.home.homeDirectory}/.config/data";
     XDG_CACHE_HOME = "${config.home.homeDirectory}/.config/cache";
     XDG_STATE_HOME = "${config.home.homeDirectory}/.config/state";
-    
+
     # Force applications to use .config paths
     HISTFILE = "${config.home.homeDirectory}/.config/shell/history";
     LESSHISTFILE = "${config.home.homeDirectory}/.config/less/history";

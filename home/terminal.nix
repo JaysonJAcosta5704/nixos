@@ -24,7 +24,7 @@ in
       eapps = "$EDITOR ${apps}/applications.nix";
       eother = "yazi ${path}";
       nix-git = "cd ${path} && git status";
-      nix-format = "nixfmt ${path}/**/**";
+      nix-format = "nixfmt ${path}/**/**/**/*";
     };
     dotDir = ".config/zsh";
     history.path = ".config/zsh/history";

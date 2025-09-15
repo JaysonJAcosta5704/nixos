@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [ ./keybindings.nix ];
-  
+
   wayland.windowManager.sway = {
     enable = true;
     checkConfig = false;

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   wayland.windowManager.sway.config = {
     keybindings = {
       # Application launchers
@@ -76,7 +77,8 @@
 
       # System controls
       "Mod4+Shift+c" = "reload";
-      "Mod4+Shift+e" = ''exec swaynag -t warning -m "You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session." -b 'Yes, exit sway' 'swaymsg exit'';
+      "Mod4+Shift+e" =
+        ''exec swaynag -t warning -m "You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session." -b 'Yes, exit sway' 'swaymsg exit'';
 
       # Screenshots
       "Mod4+Shift+s" = ''exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d%H%M%S).png'';
@@ -114,17 +116,17 @@
         "Up" = "resize shrink height 10 px";
         "Left" = "resize shrink width 10 px";
         "Right" = "resize grow width 10 px";
-        
+
         # Vim keys
         "h" = "resize shrink width 10 px";
         "j" = "resize grow height 10 px";
         "k" = "resize shrink height 10 px";
         "l" = "resize grow width 10 px";
-        
+
         # Exit resize mode
         "Return" = "mode default";
         "Escape" = "mode default";
       };
-    };    
+    };
   };
 }
