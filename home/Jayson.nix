@@ -5,6 +5,7 @@
     ./waybar.nix
     ./terminal.nix
     ../applications/applications.nix
+    ./dotfiles.nix
   ];
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -61,11 +62,14 @@
         obsidian
 
         python3Full
+        uv
         docker-compose
         docker
         jdk
         nodejs_22
         apfs-fuse
+
+        awscli2
       ];
   };
 }

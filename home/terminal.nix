@@ -26,7 +26,8 @@ in
       nix-git = "cd ${path} && git status";
       nix-format = "nixfmt ${path}/**/**";
     };
-    history.path = "$HOME/.config/zsh/history";
+    dotDir = ".config/zsh";
+    history.path = ".config/zsh/history";
   };
 
   programs.alacritty = {
