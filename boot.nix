@@ -9,20 +9,22 @@
         useOSProber = true;
         configurationLimit = 5;
         extraEntries = ''
-          menuentry "Shutdown" { halt }
-          menuentry "Reboot" { reboot }
-          menuentry "Enter BIOS" { fwsetup }
-          menuentry "Rescue Shell" {
-            linux /boot/bzImage
-            initrd /boot/initrd
-            boot
+          submenu "System - All options {
+            menuentry "Shutdown" { halt }
+            menuentry "Reboot" { reboot }
+            menuentry "Enter BIOS" { fwsetup }
+            menuentry "Rescue Shell" {
+              linux /boot/bzImage
+              initrd /boot/initrd
+              boot
+            }
           }
-          menuentry "Ventoy USB (/dev/sdX)" {
+          menuentry "Ventoy USB" {
               insmod part_gpt
               insmod part_msdos
               
               if search --no-floppy --set=root --label "VTOYEFI"; then
-                  echo "Ventoy drive found with label VTOYEFI"
+                   echo "Ventoy drive found with label VTOYEFI"
                   chainloader /EFI/BOOT/BOOTX64.EFI
                   boot
               elif search --no-floppy --set=root --label "VentoyEFI"; then
@@ -40,6 +42,13 @@
                   reboot
               fi
               
+          }
+          menuentry "MacOS (OpenCore)"{
+            chainloader /EFI/OC/OpenCore.efi
+          }
+          menuentry "FreeBSD"{
+            search --file --set=root /boot/loader.efi
+            chainloader /boot/loader.efi
           }
         '';
       };
