@@ -16,6 +16,7 @@
         "wheel"
         "video"
         "storage"
+        "docker"
       ];
       packages = with pkgs; [ tree ];
     };

@@ -27,7 +27,7 @@ in
       nix-format = "nixfmt ${path}/**/**/**/*";
     };
     dotDir = ".config/zsh";
-    history.path = "/home/jayson/.config/zsh/history";
+    history.path = "/home/Jayson/.config/zsh/history";
   };
 
   programs.alacritty = {

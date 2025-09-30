@@ -4,12 +4,12 @@
     loader = {
       grub = {
         enable = true;
-        efiSupport = true;
-        device = "nodev";
-        useOSProber = true;
+        enableCryptodisk = true;
         configurationLimit = 5;
+        device = "nodev";
+        efiSupport = true;
         extraEntries = ''
-          submenu "System - All options {
+          submenu "System - All options" --class submenu {
             menuentry "Shutdown" { halt }
             menuentry "Reboot" { reboot }
             menuentry "Enter BIOS" { fwsetup }
@@ -46,15 +46,13 @@
           menuentry "MacOS (OpenCore)"{
             chainloader /EFI/OC/OpenCore.efi
           }
-          menuentry "FreeBSD"{
-            search --file --set=root /boot/loader.efi
-            chainloader /boot/loader.efi
-          }
         '';
+        useOSProber = true;
+        timeout = 30;
       };
       efi = {
-        efiSysMountPoint = "/boot";
         canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;

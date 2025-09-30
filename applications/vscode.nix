@@ -10,6 +10,11 @@
         catppuccin.catppuccin-vsc-icons
         esbenp.prettier-vscode
         jnoortheen.nix-ide
+        ms-python.python
+        ms-azuretools.vscode-docker
+        github.copilot
+        bierner.markdown-mermaid
+        gruntfuggly.todo-tree
       ];
 
       userSettings = {

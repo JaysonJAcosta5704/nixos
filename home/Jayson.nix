@@ -68,6 +68,7 @@
         jdk
         nodejs_22
         apfs-fuse
+        postgresql
 
         awscli2
       ];

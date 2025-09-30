@@ -45,5 +45,7 @@
   services.gvfs.enable = true;
   fonts.fontconfig.enable = true;
 
+  virtualisation.docker.enable = true;
+
   system.stateVersion = "25.05";
 }
