@@ -2,6 +2,7 @@
 {
   boot = {
     loader = {
+      timeout = 30;
       grub = {
         enable = true;
         enableCryptodisk = true;
@@ -48,7 +49,6 @@
           }
         '';
         useOSProber = true;
-        timeout = 30;
       };
       efi = {
         canTouchEfiVariables = true;

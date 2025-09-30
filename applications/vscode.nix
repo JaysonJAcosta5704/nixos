@@ -23,6 +23,7 @@
         "files.autoSave" = "afterDelay";
         "git.autofetch" = true;
         "git.enableSmartCommit" = true;
+        "git.confirmSync" = false;
 
         # Prettier settings
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
